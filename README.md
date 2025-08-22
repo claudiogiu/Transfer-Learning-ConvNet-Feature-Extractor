@@ -44,7 +44,7 @@ To set up the repository properly, follow these steps:
    - This command sequentially runs the following modules:
      - `preprocess.py`: Splits the raw image dataset into training and test sets.
      - `augmentations.py`: Defines data augmentation strategies for training and transformations for evaluation over data sets.
-     - `train_model.py`: Trains a model using Transfer Learning based on a ConvNet in feature extraction mode and saves the trained model to the `models/` directory.
+     - `train_model.py`: Trains a model using Transfer Learning based on a ConvNet in feature extraction mode and saves it to the `models/` directory.
      - `evaluate_model.py`: Computes metrics to validate the model's performance. 
 
 
