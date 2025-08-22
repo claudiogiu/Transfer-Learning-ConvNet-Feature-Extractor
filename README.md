@@ -2,11 +2,11 @@
 
 ## Introduction  
 
-This repository is designed for implementing Transfer Learning using a ConvNet in feature extraction mode. The model is trained on a dataset sourced from the research conducted by KOKLU M., UNLERSEN M. F., OZKAN I. A., ASLAN M. F., and SABANCI K. (2022) in their paper *A CNN-SVM study based on selected deep features for grapevine leaves classification* (Measurement, 188, 110425, DOI: [10.1016/j.measurement.2021.110425](https://doi.org/10.1016/j.measurement.2021.110425)).  
+This repository is designed for implementing Transfer Learning via a ConvNet in feature extraction mode. The model is trained on a dataset sourced from the research conducted by KOKLU M., UNLERSEN M. F., OZKAN I. A., ASLAN M. F., and SABANCI K. (2022) in their paper *A CNN-SVM study based on selected deep features for grapevine leaves classification* (Measurement, 188, 110425, DOI: [10.1016/j.measurement.2021.110425](https://doi.org/10.1016/j.measurement.2021.110425)).  
 
 The dataset used for training is publicly available at [this link](https://www.muratkoklu.com/datasets/).  
 
-Transfer Learning enables models pre-trained on large datasets to be reused for related tasks that have limited data. In the inductive setting, in which the source and target tasks differ while sharing the same input space, feature extraction helps transfer learned representations between domains with different data distributions, improving adaptability and performance across diverse applications.
+Transfer Learning enables the reuse of models trained on large-scale datasets to address related tasks with limited labeled data. Within the inductive paradigm, in which source and target tasks differ while sharing the same input space, feature extraction is performed by maintaining the weights of a pre-trained architecture unchanged and introducing a task-specific output layer to refine the learned representations to the domain of interest.
 
 ## Getting Started 
 
@@ -43,8 +43,8 @@ To set up the repository properly, follow these steps:
    
    - This command sequentially runs the following modules:
      - `preprocess.py`: Splits the raw image dataset into training and test sets.
-     - `augmentations.py`: Defines data augmentation strategies for training and transformations for evaluation across data sets.
-     - `train_model.py`: Trains a ConvNet using Transfer Learning in feature extraction mode and saves the trained model to the `models/` directory.
+     - `augmentations.py`: Defines data augmentation strategies for training and transformations for evaluation over data sets.
+     - `train_model.py`: Trains a model using Transfer Learning based on a ConvNet in feature extraction mode and saves the trained model to the `models/` directory.
      - `evaluate_model.py`: Computes metrics to validate the model's performance. 
 
 
