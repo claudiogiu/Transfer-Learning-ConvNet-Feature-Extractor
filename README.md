@@ -6,7 +6,7 @@ This repository is designed for implementing Transfer Learning via a ConvNet in 
 
 The dataset used for training is publicly available at [this link](https://www.muratkoklu.com/datasets/).  
 
-Transfer Learning enables the reuse of models trained on large-scale datasets to address related tasks with limited labeled data. Within the inductive paradigm, in which source and target tasks differ while sharing the same input space, feature extraction is performed by maintaining the weights of a pre-trained architecture unchanged and introducing a task-specific output layer to refine the learned representations for the domain of interest.
+Transfer Learning enables the reuse of models trained on large-scale datasets to address related tasks with limited labeled data. Within the inductive paradigm, feature extraction is performed by maintaining the weights of a pre-trained architecture unchanged and introducing a task-specific output layer to refine the learned representations specific to the domain of interest.
 
 ## Getting Started 
 
