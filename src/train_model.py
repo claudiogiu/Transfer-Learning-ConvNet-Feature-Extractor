@@ -17,8 +17,7 @@ warnings.filterwarnings("ignore")
 @dataclass
 class ModelTrainer:
     """
-    Interface for training a transfer learning model using EfficientNet-B0,
-    structured for compatibility with PyTorch's training workflow.
+    Interface for implementing Transfer Learning using EfficientNet-B0 in feature extraction mode.
 
     Attributes:
         num_classes (int): Number of output classes for classification.
@@ -50,7 +49,7 @@ class ModelTrainer:
             Executes the training loop and monitors training progress.
 
         _save_model() -> None:
-            Saves the trained model weights.
+            Saves the trained model weights in the 'models/' directory.
     """
 
     num_classes: int = 5

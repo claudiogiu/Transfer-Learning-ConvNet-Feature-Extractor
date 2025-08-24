@@ -10,8 +10,7 @@ warnings.filterwarnings("ignore")
 @dataclass
 class ImageFolderSplitter:
     """
-    Interface for splitting an image classification dataset into training and test sets,
-    organized in a format compatible with PyTorch's ImageFolder.
+    Interface for splitting an image classification dataset into training and test sets.
 
     Attributes:
         dataset_name (str): Name of the folder inside 'data/raw' containing class subfolders.
@@ -26,10 +25,10 @@ class ImageFolderSplitter:
         test_path (str): Destination path for test images.
 
     Methods:
-        prepare_directories() -> None:
-            Clears and recreates the 'train' and 'test' directories under 'data/processed'.
+        _prepare_directories() -> None:
+            Creates the 'train' and 'test' directories under 'data/processed', replacing any existing ones.
 
-        split_dataset() -> None:
+        _split_dataset() -> None:
             Iterates through each class folder, shuffles and splits images into training and test sets,
             then copies them into the appropriate subdirectories.
 
@@ -61,17 +60,17 @@ class ImageFolderSplitter:
     def test_path(self) -> str:
         return os.path.join(self.processed_path, "test")
 
-    def prepare_directories(self) -> None:
+    def _prepare_directories(self) -> None:
         for path in [self.train_path, self.test_path]:
             if os.path.exists(path):
                 shutil.rmtree(path)
             os.makedirs(path, exist_ok=True)
 
-    def split_dataset(self) -> None:  
+    def _split_dataset(self) -> None:  
         if not os.path.exists(self.raw_path):
             raise FileNotFoundError(f"Dataset folder not found: {self.raw_path}")
 
-        self.prepare_directories()
+        self._prepare_directories()
 
         if self.random_seed is not None:
             random.seed(self.random_seed)
@@ -130,7 +129,7 @@ class ImageFolderSplitter:
             print(f"[{class_name}] Train: {len(train_imgs)} | Test: {len(test_imgs)}")
 
     def execute(self) -> None:     
-        self.split_dataset()
+        self._split_dataset()
 
 
 if __name__ == "__main__":

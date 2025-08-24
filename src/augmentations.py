@@ -15,10 +15,10 @@ class ImageAugmentations:
 
     Methods:
         training_transforms() -> transforms.Compose:
-            Returns a sequence of augmentations applied during training to improve generalization.
+            Returns a randomized sequence of augmentations applied to training data.
 
         test_transforms() -> transforms.Compose:
-            Returns a deterministic preprocessing pipeline for evaluation and inference.
+            Returns a deterministic sequence of preprocessing steps applied to test data.
     """
 
     crop_size: int = 224

@@ -17,8 +17,7 @@ warnings.filterwarnings("ignore")
 @dataclass
 class ModelEvaluator:
     """
-    Interface for evaluating a trained EfficientNet-B0 model on a test dataset,
-    structured for compatibility with PyTorch's inference workflow.
+    Interface for evaluating a trained EfficientNet-B0 model on a test dataset.
 
     Attributes:
         weights_path (str): Path to the trained model weights (.pth file).
@@ -42,7 +41,7 @@ class ModelEvaluator:
             Loads the test dataset and applies test-time transformations.
 
         _load_model() -> nn.Module:
-            Reconstructs EfficientNet-B0 and loads trained weights from 'models/'.
+            Reconstructs EfficientNet-B0 and loads trained weights from the 'models/' directory.
             Raises FileNotFoundError if the specified file does not exist.
 
         evaluate() -> None:
