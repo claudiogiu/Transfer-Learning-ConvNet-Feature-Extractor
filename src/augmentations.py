@@ -5,8 +5,7 @@ from torchvision import transforms
 @dataclass
 class ImageAugmentations:
     """
-    Interface for defining transformation strategies to enhance and prepare image data for classification tasks,
-    structured for compatibility with PyTorch's ImageFolder.
+    Interface for defining transformation strategies to enhance and prepare image data for classification tasks.
 
     Attributes:
         crop_size (int): Final crop size applied to input images.
