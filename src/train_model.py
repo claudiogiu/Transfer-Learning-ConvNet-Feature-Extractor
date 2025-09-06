@@ -30,7 +30,7 @@ class ModelTrainer:
         data_dir (str): Automatically resolved path to the training dataset.
 
     Methods:
-        __post_init()__ -> None:
+        __post_init__() -> None:
             Initializes device, augmentation strategy, and dataset path after instantiation.
 
         _set_seed(seed: int) -> None:
